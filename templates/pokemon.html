@@ -3,10 +3,31 @@
         <title>Pokedex</title>
     </head>
     <body>
-        <h1>{{ name }}</h1>
+        
         <p>Welcome to the Pokedex!</p>
+        <h1>{{ name.name }}</h1>
+        <img src="{{ name.front_default }}" alt="{{ name.name }} image">
+        <img src="{{ name.back_default }}" alt="{{ name.name }} image">
+        <p>Height: {{ name.height }}</p>
+        <p>Hp: {{ name.hp }}</p>
+        <p>Attack: {{ name.attack }}</p>
+        <p>Defense: {{ name.defense }}</p>
+        <p>Speed: {{ name.speed }}</p>
+        <p>Special Attack: {{ name.special_attack }}</p>
+        <p>Special Defense: {{ name.special_defense }}</p>
+        <p>Base Experience: {{ name.base_experience }}</p>
+        {% for type in name.types %}
+            <p>Type: {{ type }}</p>
+        {% endfor %}
 
+        {% for ability in name.abilities %}
+            <p>Ability: {{ ability.name }}</p>
+            <p>{{ ability.effect }}</p>
+        {% endfor %}
 
+        {% for move in name.moves %}
+            <p>Move: {{ move }}</p>
+        {% endfor %}
         <div class = "home-link">
             <a href="/">Back to Home</a>
         </div>
