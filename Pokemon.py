@@ -14,6 +14,7 @@ class Pokemon:
         self.speed = pokemon_json["stats"][5]["base_stat"]
         self.height = pokemon_json["height"]
         self.base_experience = pokemon_json["base_experience"]
+        self.weight = pokemon_json["weight"]
         self.types = []
         self.moves = []
         for ability in pokemon_json["abilities"]:
