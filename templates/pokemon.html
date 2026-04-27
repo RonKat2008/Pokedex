@@ -1,36 +1,40 @@
 <html>
     <head>
-        <title>Pokedex</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     </head>
     <body>
-        
-        <p>Welcome to the Pokedex!</p>
-        <h1>{{ name.name }}</h1>
-        <img src="{{ name.front_default }}" alt="{{ name.name }} image">
-        <img src="{{ name.back_default }}" alt="{{ name.name }} image">
-        <p>Height: {{ name.height }}</p>
-        <p>Weight: {{ name.weight }}</p>
-        <p>Hp: {{ name.hp }}</p>
-        <p>Attack: {{ name.attack }}</p>
-        <p>Defense: {{ name.defense }}</p>
-        <p>Speed: {{ name.speed }}</p>
-        <p>Special Attack: {{ name.special_attack }}</p>
-        <p>Special Defense: {{ name.special_defense }}</p>
-        <p>Base Experience: {{ name.base_experience }}</p>
-        {% for type in name.types %}
-            <p>Type: {{ type }}</p>
-        {% endfor %}
+        <div class = "pokemon-container">
+            <p class = "welcome-message">Welcome to the Pokedex!</p>
+            <h1 class = "pokemon-name">{{ name.name }}</h1>
+            <img class = "image" src="{{ name.front_default }}" alt="{{ name.name }} image">
+            <img class = "image" src="{{ name.back_default }}" alt="{{ name.name }} image">
+            <p>Height: {{ name.height }}</p>
+            <p>Weight: {{ name.weight }}</p>
+            <p>Hp: {{ name.hp }}</p>
+            <p>Attack: {{ name.attack }}</p>
+            <p>Defense: {{ name.defense }}</p>
+            <p>Speed: {{ name.speed }}</p>
+            <p>Special Attack: {{ name.special_attack }}</p>
+            <p>Special Defense: {{ name.special_defense }}</p>
+            <p>Base Experience: {{ name.base_experience }}</p>
+            {% for type in name.types %}
+                <p>Type: {{ type }}</p>
+            {% endfor %}
 
-        {% for ability in name.abilities %}
-            <p>Ability: {{ ability.name }}</p>
-            <p>{{ ability.effect }}</p>
-        {% endfor %}
+            {% for ability in name.abilities %}
+                <p>Ability: {{ ability.name }}</p>
+                <p>{{ ability.effect }}</p>
+            {% endfor %}
 
-        {% for move in name.moves %}
-            <p>Move: {{ move }}</p>
-        {% endfor %}
-        <div class = "home-link">
-            <a href="/">Back to Home</a>
+            {% for move in name.moves %}
+                <p>Move: {{ move }}</p>
+            {% endfor %}
+            <div class = "home-link">
+                <a href="/">Back to Home</a>
+            </div>
         </div>
+
+        
     </body>
+    
 </html>
